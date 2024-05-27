@@ -64,3 +64,4 @@ ScrollReveal().reveal(".portfolio__card", {
   duration: 1000,
   interval: 500,
 });
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek 1</title>
+    <link rel="stylesheet" href="style.css"> <!-- Menyambungkan file CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Menyambungkan Font Awesome -->
+    <style>
+        /* CSS tambahan untuk memberi jarak pada ikon Figma */
+        .contact__socials .fab.fa-figma {
+            margin-bottom: 5px;
+            /* Atur jarak ke bawah sesuai kebutuhan */
+            font-size: 30px;
+            /* Atur ukuran ikon Figma */
+        }
+
+        /* CSS tambahan untuk mengatur posisi dan margin elemen nav__bar */
+        .nav__bar {
+            display: flex;
+            align-items: center;
+            padding: 10px 50px;
+            /* Atur padding atas, bawah, kanan, kiri */
+            color: #fff;
+            position: fixed;
+            /* Atur posisi tetap */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            /* Pastikan nav bar selalu di atas */
+        }
+
+        .nav__bar a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav__logo {
+            margin-right: 10px;
+            /* Atur jarak kanan logo */
+            margin-left: 20px;
+            /* Atur jarak kiri logo */
+        }
+
+        /* CSS untuk menampilkan gambar satu per satu ke bawah dalam grid */
+        .image-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            /* Atur jarak antara gambar */
+            justify-items: center;
+            /* Posisikan gambar di tengah */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 900px;
+            /* Atur lebar maksimum gambar */
+            height: auto;
+            /* Atur tinggi gambar otomatis untuk mempertahankan rasio aspek */
+            object-fit: contain;
+            /* Gambar akan diperkecil agar sesuai dengan ukuran kontainer, menjaga rasio aspek */
+        }
+
+        .container {
+            margin-top: 60px;
+            /* Tambahkan margin atas untuk menghindari nav bar */
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__bar">
+            <a href="#"><span class="logo nav__logo">I</span> ISNA</a>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-3-line"></i>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#service">Service</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact" class="btn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Iremia Academy</h2>
+        <div class="description-container">
+            <h2>Pengenalan Proyek Website Absensi Mahasiswa dan Dosen</h2>
+            <p>Proyek ini adalah pengembangan sebuah <strong>website absensi dinamis</strong> yang dirancang untuk
+                memudahkan
+                proses pencatatan kehadiran mahasiswa dan dosen. Website ini dibuat menggunakan <strong>PHP</strong>
+                sebagai
+                bahasa pemrograman utama dan <strong>MySQL</strong> sebagai sistem manajemen basis datanya.</p>
+
+            <h3>Fitur Utama:</h3>
+            <ul>
+                <li><strong>Login dengan Dua Peran (Roles):</strong>
+                    <ul>
+                        <li><strong>Dosen:</strong> Dosen dapat masuk ke dalam sistem untuk mengelola absensi.</li>
+                        <li><strong>Mahasiswa:</strong> Mahasiswa dapat masuk ke dalam sistem untuk mencatat kehadiran
+                            mereka.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Pencatatan Kehadiran Mahasiswa:</strong>
+                    <ul>
+                        <li>Mahasiswa login dengan memasukkan kata sandi dan kode mata kuliah.</li>
+                        <li>Setelah berhasil, akan muncul pop-up notifikasi yang mengkonfirmasi bahwa absensi telah
+                            berhasil
+                            dicatat.</li>
+                    </ul>
+                </li>
+                <li><strong>Manajemen Kehadiran oleh Dosen:</strong>
+                    <ul>
+                        <li>Dosen dapat melihat rekapitulasi kehadiran mahasiswa.</li>
+                        <li>Dosen memiliki kemampuan untuk mengedit, menghapus, dan menambahkan data kehadiran
+                            mahasiswa.</li>
+                    </ul>
+                </li>
+                <li><strong>Keamanan dan Autentikasi:</strong>
+                    <ul>
+                        <li>Sistem menggunakan mekanisme autentikasi untuk memastikan bahwa hanya pengguna yang
+                            berwenang yang
+                            dapat mengakses fitur sesuai dengan perannya.</li>
+                    </ul>
+                </li>
+                <li><strong>Pelaporan dan Analisis:</strong>
+                    <ul>
+                        <li>Sistem menyediakan laporan kehadiran yang dapat diakses dan diunduh oleh dosen untuk
+                            keperluan
+                            analisis lebih lanjut.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Teknologi yang Digunakan:</h3>
+            <ul>
+                <li><strong>PHP:</strong> Digunakan untuk pengembangan backend dan logika aplikasi.</li>
+                <li><strong>MySQL:</strong> Digunakan untuk penyimpanan dan manajemen data kehadiran.</li>
+                <li><strong>HTML/CSS/JavaScript:</strong> Digunakan untuk pengembangan frontend dan memastikan antarmuka
+                    pengguna yang responsif dan intuitif.</li>
+            </ul>
+
+            <p>Proyek ini bertujuan untuk meningkatkan efisiensi dan akurasi dalam pencatatan kehadiran di lingkungan
+                akademis,
+                memberikan kemudahan bagi mahasiswa dalam mencatat kehadiran mereka, serta menyediakan alat bagi dosen
+                untuk
+                mengelola dan memantau kehadiran mahasiswa secara efektif.</p>
+        </div>
+        <div class="image-container">
+            <img id="img1" src="assets/game.png" alt="portfolio" />
+            <img id="img2" src="assets/play.png" alt="portfolio" />
+            <img id="img3" src="assets/biru.png" alt="portfolio" />
+            <img id="img4" src="assets/merah.png" alt="portfolio" />
+            <img id="img5" src="assets/credit.png" alt="portfolio" />
+            <img id="img6" src="assets/exit.png" alt="portfolio" />
+        </div>
+    </div>
+    <!-- Contact Section -->
+    <section class="section__container contact__container" id="contact">
+        <div class="logo">I</div>
+        <h2 class="section__header">Let's Talk With Me!</h2>
+        <p class="section__description">
+            Feel free to reach out and discuss potential collaborations through my personal portfolio website.
+        </p>
+        <p class="section__description-small">
+            Kunjungi tautan berikut untuk detail project
+        </p>
+        <div class="contact__socials">
+            <a href="https://github.com/IsnaJesika"><i class="ri-github-fill"></i></a>
+            <a href="https://ikb22.xyz/kelompok5/">
+                <i class="fas fa-globe"></i> <!-- Menggunakan ikon Web dari Font Awesome -->
+            </a>
+        </div>
+    </section>
+
+</body>
+
+</html>

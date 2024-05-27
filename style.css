@@ -1,0 +1,376 @@
+/* Import Google Font Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* Global Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #2f4f75;
+    background-image: url('path/to/your/background.jpg');
+    /* Ganti dengan path yang sesuai */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* Set font color to white */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px auto;
+    position: relative;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.description {
+    text-align: justify;
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+/* Figma logo styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Optional: Adds a semi-transparent background */
+}
+
+footer a {
+    color: white;
+    /* Set icon color to white */
+    font-size: 2rem;
+    /* Adjust size as needed */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #0acf83;
+    /* Figma green color on hover */
+}
+
+/* Figma logo styles */
+.logo-figma {
+    font-size: 2rem;
+    /* Set font size to desired size */
+    color: white;
+    /* Set icon color to white */
+}
+
+.contact__container {
+    text-align: center;
+}
+
+.contact__container .logo {
+    margin-bottom: 1rem;
+}
+
+.contact__socials {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.contact__socials a {
+    padding: 7px 10px;
+    font-size: 1.5rem;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.contact__socials a:hover {
+    background: var(--gradient-2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS tambahan untuk memberi jarak pada ikon Figma */
+.contact__socials .fab.fa-figma {
+    margin-bottom: 5px;
+    /* Atur jarak ke bawah sesuai kebutuhan */
+    font-size: 30px;
+    /* Atur ukuran ikon Figma */
+}
+
+/* CSS tambahan untuk mengatur posisi dan margin elemen nav__bar */
+.nav__bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+    /* Atur padding atas, bawah, kanan, kiri */
+    color: #fff;
+    position: fixed;
+    /* Atur posisi tetap */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Pastikan nav bar selalu di atas */
+}
+
+.nav__bar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav__logo {
+    margin-right: 10px;
+    /* Atur jarak kanan logo */
+    margin-left: 20px;
+    /* Atur jarak kiri logo */
+}
+
+/* CSS tambahan untuk memberi jarak pada ikon Figma */
+.contact__socials .fab.fa-figma {
+    margin-bottom: 5px;
+    /* Atur jarak ke bawah sesuai kebutuhan */
+    font-size: 30px;
+    /* Atur ukuran ikon Figma */
+}
+
+/* CSS tambahan untuk mengatur posisi dan margin elemen nav__bar */
+.nav__bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+    /* Atur padding atas, bawah, kanan, kiri */
+    color: #fff;
+    position: fixed;
+    /* Atur posisi tetap */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Pastikan nav bar selalu di atas */
+}
+
+.nav__bar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav__logo {
+    margin-right: 10px;
+    /* Atur jarak kanan logo */
+    margin-left: 20px;
+    /* Atur jarak kiri logo */
+}
+
+/* CSS untuk menampilkan gambar satu per satu ke bawah */
+.image-container img {
+    display: block;
+    margin: 10px auto;
+    /* Atur jarak antara gambar dan posisikan di tengah */
+    width: 100%;
+    max-width: 1800px;
+    /* Atur lebar maksimum gambar */
+    height: auto;
+    /* Atur tinggi gambar otomatis untuk mempertahankan rasio aspek */
+
+}
+
+.container {
+    margin-top: 60px;
+    /* Tambahkan margin atas untuk menghindari nav bar */
+    padding: 20px;
+}
+
+/* CSS tambahan untuk memberi jarak pada ikon Figma */
+.contact__socials .fab.fa-figma {
+    margin-bottom: 5px;
+    /* Atur jarak ke bawah sesuai kebutuhan */
+    font-size: 30px;
+    /* Atur ukuran ikon Figma */
+}
+
+/* CSS tambahan untuk mengatur posisi dan margin elemen nav__bar */
+.nav__bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+    /* Atur padding atas, bawah, kanan, kiri */
+    color: #fff;
+    position: fixed;
+    /* Atur posisi tetap */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Pastikan nav bar selalu di atas */
+}
+
+.nav__bar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav__logo {
+    margin-right: 10px;
+    /* Atur jarak kanan logo */
+    margin-left: 20px;
+    /* Atur jarak kiri logo */
+}
+
+body {
+    background-color: #395176,#90b1cf;
+    /* Memberikan warna latar belakang gelap untuk kontras */
+    color: #fff;
+    /* Warna font putih */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.description-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #395176,
+        #90b1cf;
+    /* Memberikan sedikit warna latar belakang pada container */
+    border-radius: 8px;
+    line-height: 1.6;
+}
+
+.description-container h2 {
+    text-align: center;
+    color: #ffcc00;
+    /* Warna judul berbeda untuk penekanan */
+}
+
+.description-container h3 {
+    margin-top: 30px;
+    color: #ffcc00;
+    /* Warna subjudul berbeda untuk penekanan */
+}
+
+.description-container p {
+    margin-bottom: 15px;
+    text-align: justify;
+    /* Teks rata kanan-kiri */
+}
+
+.description-container ul {
+    margin-left: 20px;
+    text-align: justify;
+    /* Teks rata kanan-kiri untuk daftar */
+}
+
+.description-container ul li {
+    margin-bottom: 10px;
+}
+
+/* CSS tambahan untuk mengatur posisi dan margin elemen nav__bar */
+.nav__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Spasi antara logo dan menu */
+    padding: 10px 50px;
+    /* Atur padding atas, bawah, kanan, kiri */
+    color: #fff;
+    position: fixed;
+    /* Atur posisi tetap */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Pastikan nav bar selalu di atas */
+    background-color: #395176;
+
+    /* Tambahkan warna background */
+}
+
+.nav__logo {
+    margin-right: auto;
+    /* Atur jarak kanan logo */
+}
+
+.nav__menu__btn {
+    display: none;
+    /* Sembunyikan menu button secara default */
+}
+
+.nav__links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.nav__links li {
+    margin: 0 10px;
+    /* Atur jarak antara link */
+}
+
+.nav__links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .nav__menu__btn {
+        display: block;
+        /* Tampilkan menu button di layar kecil */
+    }
+
+    .nav__links {
+        display: none;
+        /* Sembunyikan links di layar kecil */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav__links li {
+        margin: 10px 0;
+        /* Atur jarak antara link vertikal */
+    }
+
+    .nav__links.active {
+        display: flex;
+        /* Tampilkan links saat menu button diklik */
+    }
+}
