@@ -3,7 +3,7 @@
 :root {
   --primary-color: #2f4f75;
   --secondary-color: #9295b7;
-  --extra-light: #76ABAE;
+  --extra-light: #ffffff;
   --white: #ffffff;
   --gradient-1: linear-gradient(to bottom right, #395176, #90b1cf);
   --gradient-2: linear-gradient(to bottom,
@@ -467,6 +467,7 @@ nav {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 .nav__links {
   list-style-type: none;
   margin: 0;
@@ -484,6 +485,6 @@ nav {
 
 .nav__links li a {
   text-decoration: none;
-  color: black;
+  color: rgb(27, 29, 128);
   font-weight: bold;
 }
