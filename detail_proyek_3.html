@@ -6,16 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Proyek 1</title>
     <link rel="stylesheet" href="style.css"> <!-- Menyambungkan file CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Menyambungkan Font Awesome -->
+    <style>
+        /* CSS tambahan untuk memberi jarak pada ikon Figma */
+        .contact__socials .fab.fa-figma {
+            margin-bottom: 5px;
+            /* Atur jarak ke bawah sesuai kebutuhan */
+            font-size: 30px;
+            /* Atur ukuran ikon Figma */
+        }
+
+        /* CSS tambahan untuk mengatur posisi dan margin elemen nav__bar */
+        .nav__bar {
+            display: flex;
+            align-items: center;
+            padding: 10px 50px;
+            /* Atur padding atas, bawah, kanan, kiri */
+            color: #fff;
+            position: fixed;
+            /* Atur posisi tetap */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            /* Pastikan nav bar selalu di atas */
+        }
+
+        .nav__bar a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav__logo {
+            margin-right: 10px;
+            /* Atur jarak kanan logo */
+            margin-left: 20px;
+            /* Atur jarak kiri logo */
+        }
+
+        /* CSS untuk menampilkan gambar satu per satu ke bawah dalam grid */
+        .image-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            /* Atur jarak antara gambar */
+            justify-items: center;
+            /* Posisikan gambar di tengah */
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 900px;
+            /* Atur lebar maksimum gambar */
+            height: auto;
+            /* Atur tinggi gambar otomatis untuk mempertahankan rasio aspek */
+            object-fit: contain;
+            /* Gambar akan diperkecil agar sesuai dengan ukuran kontainer, menjaga rasio aspek */
+        }
+
+        .container {
+            margin-top: 60px;
+            /* Tambahkan margin atas untuk menghindari nav bar */
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Detail Proyek 1</h2>
-    <img src="assets/stayin.png"" alt=" portfolio" />
-    <p>
-        One of the UI design projects for an application with Figma and several other UI projects can be seen on my
-        GitHub.
-    </p>
-    <p>
-        Additional information about the project goes here.
-    </p>
+    <nav>
+        <div class="nav__bar">
+            <a href="#"><span class="logo nav__logo">I</span> ISNA</a>
+            <div class="nav__menu__btn" id="menu-btn">
+                <i class="ri-menu-3-line"></i>
+            </div>
+            <ul class="nav__links" id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#service">Service</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact" class="btn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>StayIn</h2>
+        <div class="description-container">
+            <h3>Latar Belakang Proyek</h3>
+            <p>
+            Dalam perkembangan zaman yang cepat dan urbanisasi yang semakin tinggi, banyak individu, terutama mereka yang tinggal di
+            kota-kota besar, mencari solusi perumahan yang fleksibel dan nyaman. Apartemen sewa jangka pendek atau jangka panjang
+            menjadi pilihan populer bagi banyak orang, baik untuk tujuan sementara maupun sebagai alternatif gaya hidup yang lebih
+            fleksibel daripada kepemilikan rumah.
+            <ul>
+                <li><strong>Fitur Utama:</strong>
+                    <ul>
+                        <li>Pencarian Terperinci: Fasilitas pencarian yang memungkinkan penyewa untuk menyesuaikan kriteria pencarian mereka.
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>Pemesanan Online: Kemudahan dalam melakukan pemesanan langsung melalui platform, dengan sistem reservasi yang aman.
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>Ulasan dan Rating: Fitur untuk ulasan dan rating dari penyewa sebelumnya untuk membantu calon penyewa membuat keputusan
+                        yang lebih informasional
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>Boookmark: Memudahkan untuk menyimpan apartement untuk menjadi referensi.
+                        </li>
+                    </ul>
+                </li>
+        </div>
+        <div class="image-container">
+            <img id="img1" src="assets/stayin.png" alt="portfolio" />
+        </div>
+    </div>
+    <section class="section__container contact__container" id="contact">
+        <div class="logo">I</div>
+        <h2 class="section__header">Let's Talk With Me!</h2>
+        <p class="section__description">
+            Feel free to reach out and discuss potential collaborations through my personal portfolio website. This
+            portfolio is
+            continuously updated and currently under development, so check back often to see the latest projects and
+            improvements..
+        </p>
+        <p class="section__description-small">
+            Kunjungi tautan berikut untuk detail project
+        </p>
+        <div class="contact__socials">
+            <a href="https://www.figma.com/design/juA7AiROukzLUGZprN8smW/uts?node-id=0-1&t=SfhxdUt3T0mLZtqY-1">
+                <i class="fab fa-figma"></i> <!-- Menggunakan ikon Figma dari Font Awesome -->
+            </a>
+        </div>
+    </section>
+
 </body>
+
+</html>
