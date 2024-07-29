@@ -251,7 +251,7 @@ footer a:hover {
 }
 
 body {
-    background-color: #395176,#90b1cf;
+    background-color: #395176, #90b1cf;
     /* Memberikan warna latar belakang gelap untuk kontras */
     color: #fff;
     /* Warna font putih */
@@ -374,3 +374,72 @@ body {
         /* Tampilkan links saat menu button diklik */
     }
 }
+
+
+
+/* CSS tambahan untuk memberi jarak pada ikon Figma */
+.contact__socials .fab.fa-figma {
+    margin-bottom: 5px;
+    /* Atur jarak ke bawah sesuai kebutuhan */
+    font-size: 30px;
+    /* Atur ukuran ikon Figma */
+}
+
+/* CSS tambahan untuk mengatur posisi dan margin elemen nav__bar */
+.nav__bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 50px;
+    /* Atur padding atas, bawah, kanan, kiri */
+    color: #fff;
+    position: fixed;
+    /* Atur posisi tetap */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Pastikan nav bar selalu di atas */
+}
+
+.nav__bar a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+    /* Updated font size */
+    font-weight: bold;
+}
+
+
+.nav__logo {
+    margin-right: 10px;
+    /* Atur jarak kanan logo */
+    margin-left: 20px;
+    /* Atur jarak kiri logo */
+}
+
+/* CSS untuk menampilkan gambar satu per satu ke bawah dalam grid */
+.image-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    /* Atur jarak antara gambar */
+    justify-items: center;
+    /* Posisikan gambar di tengah */
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 900px;
+    /* Atur lebar maksimum gambar */
+    height: auto;
+    /* Atur tinggi gambar otomatis untuk mempertahankan rasio aspek */
+    object-fit: contain;
+    /* Gambar akan diperkecil agar sesuai dengan ukuran kontainer, menjaga rasio aspek */
+}
+
+.container {
+    margin-top: 60px;
+    /* Tambahkan margin atas untuk menghindari nav bar */
+    padding: 20px;
+}
+
