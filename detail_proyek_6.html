@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StayIn - Project Detail</title>
+    <title>SIPMAS - Sistem Pengabdian Masyarakat</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         * {
@@ -29,6 +29,7 @@
             overflow-x: hidden;
         }
 
+        /* Navbar */
         nav {
             position: fixed;
             top: 0;
@@ -88,6 +89,7 @@
             cursor: pointer;
         }
 
+        /* Hero Section */
         .hero-section {
             padding: 150px 5% 100px;
             text-align: center;
@@ -186,6 +188,25 @@
             color: var(--primary);
         }
 
+        .achievement-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+            border: 2px solid rgba(99, 102, 241, 0.4);
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .achievement-badge i {
+            font-size: 1.5rem;
+            color: #fbbf24;
+        }
+
+        /* Project Description */
         .description-section {
             padding: 80px 5%;
             max-width: 1200px;
@@ -209,12 +230,6 @@
             background-clip: text;
         }
 
-        .description-card h3 {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            color: var(--light);
-        }
-
         .description-card p {
             color: var(--gray);
             line-height: 1.8;
@@ -222,74 +237,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .description-card ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .description-card ul li {
-            color: var(--gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .description-card ul li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .description-card strong {
-            color: var(--light);
-            font-weight: 600;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            background: rgba(99, 102, 241, 0.05);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .feature-item:hover {
-            background: rgba(99, 102, 241, 0.1);
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .feature-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .feature-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--light);
-        }
-
-        .feature-item p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
+        /* Image Gallery */
         .gallery-section {
             padding: 80px 5%;
             max-width: 1400px;
@@ -323,7 +271,7 @@
             border: 1px solid rgba(99, 102, 241, 0.2);
             transition: all 0.4s;
             cursor: pointer;
-            aspect-ratio: 9/16;
+            aspect-ratio: 16/9;
         }
 
         .gallery-item:hover {
@@ -343,6 +291,7 @@
             transform: scale(1.1);
         }
 
+        /* Links Section */
         .links-section {
             padding: 80px 5%;
             text-align: center;
@@ -398,6 +347,7 @@
             font-size: 1.3rem;
         }
 
+        /* Footer */
         footer {
             padding: 2rem;
             text-align: center;
@@ -406,6 +356,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Modal for images */
         .modal {
             display: none;
             position: fixed;
@@ -446,6 +397,7 @@
             color: var(--primary);
         }
 
+        /* Responsive */
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
@@ -485,10 +437,6 @@
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         html {
@@ -498,6 +446,7 @@
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="logo">Isna.dev</div>
         <ul class="nav-links" id="navLinks">
@@ -510,6 +459,7 @@
         <i class="ri-menu-line menu-btn" id="menuBtn"></i>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="gradient-blob blob-1"></div>
         <div class="gradient-blob blob-2"></div>
@@ -518,137 +468,127 @@
             <a href="index.html#portfolio" class="back-btn">
                 <i class="ri-arrow-left-line"></i> Back to Portfolio
             </a>
-            <h1>StayIn</h1>
+            <h1>SIPMAS</h1>
             <div class="project-meta">
                 <div class="meta-item">
-                    <i class="ri-smartphone-line"></i>
-                    <span>Mobile App</span>
+                    <i class="ri-palette-line"></i>
+                    <span>Web Development</span>
                 </div>
+                <!-- <div class="meta-item">
+                    <i class="ri-window-line"></i>
+                    <span></span>
+                </div> -->
                 <div class="meta-item">
-                    <i class="ri-flutter-line"></i>
-                    <span>Flutter</span>
-                </div>
-                <div class="meta-item">
-                    <i class="ri-building-line"></i>
-                    <span>Real Estate</span>
+                    <i class="ri-graduation-cap-line"></i>
+                    <span>E-Learning Platform</span>
                 </div>
             </div>
+            <!-- <div class="achievement-badge">
+                <i class="ri-trophy-line"></i>
+                <span>Top 16 of 150 Participants - ISSFEST 2023</span>
+            </div> -->
         </div>
     </section>
 
+    <!-- Description Section -->
     <section class="description-section">
         <div class="description-card">
-            <h2>Project Background</h2>
+            <h2>Project Overview</h2>
             <p>
-                In an era of rapid development and increasing urbanization, many individuals, especially those living in
-                major cities, are seeking flexible and comfortable housing solutions. Short-term or long-term apartment
-                rentals have become a popular choice for many people, both for temporary purposes and as a more flexible
-                lifestyle alternative to home ownership.
+                The system is designed to help lecturers easily submit, manage, and monitor their proposals through a
+                structured and
+                user-friendly digital platform. SIPMAS simplifies administrative processes, minimizes paperwork, and
+                improves efficiency
+                in proposal handling.
             </p>
             <p>
-                StayIn was created to address the growing demand for a seamless apartment rental experience, providing a
-                comprehensive platform that connects property owners with potential tenants while ensuring transparency,
-                security, and convenience throughout the rental process.
+                This project demonstrates the implementation of role-based access, data management, and a clean workflow
+                to support
+                academic community service activities effectively.
             </p>
         </div>
 
         <div class="description-card">
             <h2>Key Features</h2>
-
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <i class="ri-search-line"></i>
-                    <h4>Advanced Search</h4>
-                    <p>Detailed search functionality allowing tenants to customize their search criteria including
-                        location, price range, amenities, and apartment type.</p>
-                </div>
-
-                <div class="feature-item">
-                    <i class="ri-calendar-check-line"></i>
-                    <h4>Online Booking</h4>
-                    <p>Convenient direct booking through the platform with a secure reservation system, making the
-                        rental process hassle-free.</p>
-                </div>
-
-                <div class="feature-item">
-                    <i class="ri-star-line"></i>
-                    <h4>Reviews & Ratings</h4>
-                    <p>Review and rating system from previous tenants to help prospective renters make more informed
-                        decisions.</p>
-                </div>
-
-                <div class="feature-item">
-                    <i class="ri-bookmark-line"></i>
-                    <h4>Bookmark Feature</h4>
-                    <p>Save your favorite apartments for easy reference and comparison, helping you keep track of
-                        potential rental options.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="description-card">
-            <h2>User Experience Design</h2>
+            <p>SIPMAS - Research & Community Service Management System
             <p>
-                StayIn prioritizes user experience with an intuitive interface that makes apartment hunting enjoyable
-                rather than overwhelming. The app features:
-            </p>
-            <ul>
-                <li>Clean and modern visual design that highlights property photos and essential information</li>
-                <li>Smooth navigation between property listings, detailed views, and booking processes</li>
-                <li>Quick filtering and sorting options to find the perfect apartment efficiently</li>
-                <li>Interactive maps showing apartment locations and nearby amenities</li>
-                <li>Responsive design optimized for various screen sizes and devices</li>
-            </ul>
-        </div>
-
-        <div class="description-card">
-            <h2>Target Audience</h2>
+                SIPMAS is a web-based information system developed using the Laravel framework to manage research and
+                community service
+                activities within an academic institution. The system is designed to simplify the submission,
+                monitoring, and evaluation
+                process of research and community service proposals.</p>
             <p>
-                StayIn caters to a diverse range of users including young professionals relocating for work, students
-                seeking accommodation near universities, digital nomads looking for temporary stays, and families
-                exploring flexible living arrangements in urban areas.
+                SIPMAS provides a centralized dashboard where administrators and reviewers can efficiently manage
+                submitted proposals.
+                Users can filter proposals by title, scheme, proposer name, year, and status, enabling fast and accurate
+                data retrieval.
+                The system also displays statistical summary cards that present the total number of proposals based on
+                each research or
+                community service scheme, offering a quick overview of proposal distribution.</p>
+            <p>
+                Each proposal is displayed in a structured table containing essential information such as proposal
+                title, scheme, team
+                members, submission year, and current status. Users can access detailed proposal information, track
+                submission progress,
+                and review supporting documents directly through the system.</p>
+            <p>
+                SIPMAS implements role-based access control, allowing different user roles such as administrators,
+                reviewers, and
+                lecturers to access features according to their responsibilities. Administrators can manage users,
+                schemes, and reviewer
+                assignments, while reviewers can evaluate proposals and provide assessments. Lecturers can submit
+                proposals and monitor
+                their progress transparently.</p>
+            <p>
+                By digitizing and automating the proposal management workflow, SIPMAS improves efficiency, reduces
+                administrative
+                workload, and ensures a structured and transparent research and community service management process.
             </p>
+            <p>
+                Tech Stack:
+                Laravel, PHP, MySQL, Blade Template, Bootstrap
+            </p>
+
         </div>
     </section>
 
+    <!-- Gallery Section -->
     <section class="gallery-section">
         <div class="section-title">
-            <h2>App Preview</h2>
+            <h2>Design Showcase</h2>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openModal('assets/stayin.png')">
-                <img src="assets/stayin.png" alt="StayIn App Screen 1">
+            <div class="gallery-item" onclick="openModal('assets/a.png')">
+                <img src="assets/a.png" alt=" UI Design 1">
             </div>
-            <div class="gallery-item" onclick="openModal('assets/stayin.png')">
-                <img src="assets/stayin.png" alt="StayIn App Screen 2">
+            <div class="gallery-item" onclick="openModal('assets/b.png')">
+                <img src="assets/b.png" alt="UI Design 2">
             </div>
-        </div>
-    </section>
-
-    <section class="links-section">
-        <div class="links-content">
-            <h2>View Design Prototype</h2>
-            <p>Explore the complete design on Figma</p>
-            <div class="social-links">
-                <a href="https://www.figma.com/design/juA7AiROukzLUGZprN8smW/uts?node-id=0-1&t=SfhxdUt3T0mLZtqY-1"
-                    class="social-link" target="_blank">
-                    <i class="ri-figma-line"></i>
-                    View on Figma
-                </a>
+            <div class="gallery-item" onclick="openModal('assets/c.png')">
+                <img src="assets/c.png" alt="UI Design 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/d.png')">
+                <img src="assets/d.png" alt="UI Design 4">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/e.png')">
+                <img src="assets/e.png" alt=" UI Design 4">
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Isna Jesika. All rights reserved. Crafted with passion ✨</p>
+        <p>&copy; 2024 Isna Jesika. All rights reserved.</p>
     </footer>
 
+    <!-- Image Modal -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
 
     <script>
+        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
 
@@ -658,6 +598,7 @@
             menuBtn.classList.toggle('ri-menu-line');
         });
 
+        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -666,6 +607,7 @@
             });
         });
 
+        // Image Modal Functions
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
@@ -677,12 +619,14 @@
             document.getElementById('imageModal').style.display = 'none';
         }
 
+        // Close modal with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
+        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -692,7 +636,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.description-card, .gallery-item, .feature-item').forEach(el => {
+        document.querySelectorAll('.description-card, .gallery-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
@@ -701,4 +645,4 @@
     </script>
 </body>
 
-</html> 
+</html>

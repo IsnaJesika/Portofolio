@@ -4,65 +4,756 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Proyek 4</title>
-    <link rel="stylesheet" href="style.css"> <!-- Menyambungkan file CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <!-- Menyambungkan Font Awesome -->
+    <title>Nirwana Jiwa - Project Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--light);
+            cursor: pointer;
+        }
+
+        .hero-section {
+            padding: 150px 5% 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            right: -50px;
+        }
+
+        .blob-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent);
+            bottom: -100px;
+            left: -50px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, 30px) scale(1.1);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 50px;
+            color: var(--gray);
+        }
+
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        .description-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .description-card {
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .description-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description-card h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--light);
+        }
+
+        .description-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .description-card ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .description-card ul li {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .description-card ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .description-card strong {
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--light);
+        }
+
+        .feature-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .impact-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .impact-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .impact-card p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .gallery-section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.4s;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(99, 102, 241, 0.3);
+            border-color: var(--primary);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .links-section {
+            padding: 80px 5%;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .links-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .links-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .links-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .social-link i {
+            font-size: 1.3rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            object-fit: contain;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 300px;
+                height: calc(100vh - 80px);
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .description-card {
+                padding: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
     <nav>
-        <div class="nav__bar">
-            <a href="#"><span class="logo nav__logo">I</span> ISNA</a>
-            <div class="nav__menu__btn" id="menu-btn">
-                <i class="ri-menu-3-line"></i>
-            </div>
-            <ul class="nav__links" id="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#service">Service</a></li>
-                <li><a href="index.html#portfolio">Portfolio</a></li>
-                <li><a href="index.html#contact" class="btn">Contact</a></li>
-            </ul>
-        </div>
+        <div class="logo">Isna.dev</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#service">Service</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="ri-menu-line menu-btn" id="menuBtn"></i>
     </nav>
 
-    <div class="container">
-        <h2>Nirwana Jiwa</h2>
-        <div class="description-container">
-            <p>Sebuah aplikasi kesehatan mental yang menyediakan berbagai metode refleksi diri dan koleksi buku mengenai mental health
-            untuk memotivasi dan membantu pengguna dalam keadaan yang lebih baik</p>
+    <section class="hero-section">
+        <div class="gradient-blob blob-1"></div>
+        <div class="gradient-blob blob-2"></div>
 
-            <h3>Latar Belakang Proyek</h3>
-            <ul>
-                <li><strong>Masalah yang Dihadapi:</strong>
-                    <ul>
-                        <li>meningkatnya masalah kesehatan mental di masyarakat dan kurangnya akses ke sumber daya yang membantu.
-                        </li>
-                    </ul>
-                </li>
-                <li><strong>Tujuan Aplikasi:</strong>
-                    <ul>
-                        <li>membantu pengguna untuk mengelola kesehatan mental mereka, menyediakan alat refleksi diri, dan memberikan akses ke
-                        literatur yang mendukung.</li>
-                    </ul>
-                </li>
-        </div>
-        <div class="image-container">
-            <img id="img1" src="assets/nirwana.png" alt="portfolio" />
-        </div>
-    </div>
-    <section class="section__container contact__container" id="contact">
-        <h2 class="section__header">Visit the following link for project details!</h2>
-        <div class="contact__socials">
-            <a
-                href="https://www.figma.com/design/juA7AiROukzLUGZprN8smW/uts?node-id=0-1&t=SfhxdUt3T0mLZtqY-1">
-                <i class="fab fa-figma"></i> <!-- Menggunakan ikon Figma dari Font Awesome -->
+        <div class="hero-content">
+            <a href="index.html#portfolio" class="back-btn">
+                <i class="ri-arrow-left-line"></i> Back to Portfolio
             </a>
+            <h1>Nirwana Jiwa</h1>
+            <p class="hero-tagline">
+                A mental health application providing various self-reflection methods and a curated collection of mental
+                health literature to motivate and support users toward better well-being.
+            </p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="ri-mental-health-line"></i>
+                    <span>Mental Health</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-smartphone-line"></i>
+                    <span>Mobile App</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-heart-pulse-line"></i>
+                    <span>Wellness Platform</span>
+                </div>
+            </div>
         </div>
     </section>
 
+    <section class="description-section">
+        <div class="description-card">
+            <h2>Project Background</h2>
+
+            <h3>The Problem</h3>
+            <p>
+                Mental health issues are increasingly prevalent in modern society, yet there remains a significant gap
+                in accessible resources and support systems. Many individuals struggle to find appropriate tools and
+                information to help them manage their mental well-being effectively.
+            </p>
+
+            <h3>The Solution</h3>
+            <p>
+                Nirwana Jiwa was created to bridge this gap by providing a comprehensive digital platform that empowers
+                users to take control of their mental health journey. The application combines evidence-based
+                self-reflection techniques with educational resources, making mental health support more accessible and
+                less stigmatized.
+            </p>
+        </div>
+
+        <div class="description-card">
+            <h2>Application Objectives</h2>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="ri-emotion-happy-line"></i>
+                    <h4>Mental Health Management</h4>
+                    <p>Help users actively manage their mental health through structured tools and guided exercises.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="ri-mind-map"></i>
+                    <h4>Self-Reflection Tools</h4>
+                    <p>Provide various methods for users to reflect on their thoughts, emotions, and behaviors in a safe
+                        space.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="ri-book-open-line"></i>
+                    <h4>Educational Resources</h4>
+                    <p>Offer access to curated literature on mental health topics to educate and inspire positive
+                        change.</p>
+                </div>
+
+                <div class="feature-item">
+                    <i class="ri-lightbulb-flash-line"></i>
+                    <h4>Motivational Support</h4>
+                    <p>Deliver motivational content and guidance to encourage users on their journey to better mental
+                        health.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="description-card">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Daily Mood Tracking:</strong> Monitor emotional patterns and identify triggers through
+                    intuitive mood logging</li>
+                <li><strong>Guided Journaling:</strong> Structured prompts to facilitate meaningful self-reflection and
+                    personal growth</li>
+                <li><strong>Meditation & Mindfulness:</strong> Audio-guided sessions for stress relief and mental
+                    clarity</li>
+                <li><strong>Mental Health Library:</strong> Curated collection of articles, books, and resources on
+                    various mental health topics</li>
+                <li><strong>Progress Analytics:</strong> Visual insights into your mental health journey and
+                    improvements over time</li>
+                <li><strong>Crisis Resources:</strong> Quick access to professional help and emergency support when
+                    needed</li>
+                <li><strong>Privacy-First Design:</strong> All personal data is encrypted and secure, ensuring user
+                    confidentiality</li>
+            </ul>
+        </div>
+
+        <div class="impact-card">
+            <i class="ri-heart-line"></i>
+            <h3>Making Mental Health Care Accessible</h3>
+            <p>
+                Nirwana Jiwa aims to democratize mental health support by providing free, stigma-free access to tools
+                that promote emotional well-being. Whether you're dealing with daily stress, seeking personal growth, or
+                navigating difficult times, this platform offers compassionate support at your fingertips.
+            </p>
+        </div>
+
+        <div class="description-card">
+            <h2>Target Audience</h2>
+            <p>
+                The application serves a wide range of users including young adults navigating life transitions,
+                professionals managing work-related stress, students dealing with academic pressure, and anyone seeking
+                to improve their mental health and emotional resilience in a supportive, non-judgmental environment.
+            </p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="section-title">
+            <h2>Application Preview</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openModal('assets/nirwana.png')">
+                <img src="assets/nirwana.png" alt="Nirwana Jiwa App Interface">
+            </div>
+        </div>
+    </section>
+
+    <section class="links-section">
+        <div class="links-content">
+            <h2>View Design Prototype</h2>
+            <p>Explore the complete application design on Figma</p>
+            <div class="social-links">
+                <a href="https://www.figma.com/design/juA7AiROukzLUGZprN8smW/uts?node-id=0-1&t=SfhxdUt3T0mLZtqY-1"
+                    class="social-link" target="_blank">
+                    <i class="ri-figma-line"></i>
+                    View on Figma
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Isna Jesika. All rights reserved. Crafted with passion ✨</p>
+    </footer>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('ri-close-line');
+            menuBtn.classList.toggle('ri-menu-line');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.classList.add('ri-menu-line');
+                menuBtn.classList.remove('ri-close-line');
+            });
+        });
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.description-card, .gallery-item, .feature-item, .impact-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

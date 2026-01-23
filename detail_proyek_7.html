@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StayIn - Project Detail</title>
+    <title>Polines Karir Center</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         * {
@@ -29,6 +29,7 @@
             overflow-x: hidden;
         }
 
+        /* Navbar */
         nav {
             position: fixed;
             top: 0;
@@ -88,6 +89,7 @@
             cursor: pointer;
         }
 
+        /* Hero Section */
         .hero-section {
             padding: 150px 5% 100px;
             text-align: center;
@@ -186,6 +188,25 @@
             color: var(--primary);
         }
 
+        .achievement-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+            border: 2px solid rgba(99, 102, 241, 0.4);
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: var(--light);
+        }
+
+        .achievement-badge i {
+            font-size: 1.5rem;
+            color: #fbbf24;
+        }
+
+        /* Project Description */
         .description-section {
             padding: 80px 5%;
             max-width: 1200px;
@@ -209,12 +230,6 @@
             background-clip: text;
         }
 
-        .description-card h3 {
-            font-size: 1.5rem;
-            margin: 2rem 0 1rem;
-            color: var(--light);
-        }
-
         .description-card p {
             color: var(--gray);
             line-height: 1.8;
@@ -222,74 +237,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .description-card ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .description-card ul li {
-            color: var(--gray);
-            line-height: 1.8;
-            font-size: 1.05rem;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-        }
-
-        .description-card ul li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .description-card strong {
-            color: var(--light);
-            font-weight: 600;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item {
-            background: rgba(99, 102, 241, 0.05);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: all 0.3s;
-        }
-
-        .feature-item:hover {
-            background: rgba(99, 102, 241, 0.1);
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .feature-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .feature-item h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
-            color: var(--light);
-        }
-
-        .feature-item p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
+        /* Image Gallery */
         .gallery-section {
             padding: 80px 5%;
             max-width: 1400px;
@@ -323,7 +271,7 @@
             border: 1px solid rgba(99, 102, 241, 0.2);
             transition: all 0.4s;
             cursor: pointer;
-            aspect-ratio: 9/16;
+            aspect-ratio: 16/9;
         }
 
         .gallery-item:hover {
@@ -343,6 +291,7 @@
             transform: scale(1.1);
         }
 
+        /* Links Section */
         .links-section {
             padding: 80px 5%;
             text-align: center;
@@ -398,6 +347,7 @@
             font-size: 1.3rem;
         }
 
+        /* Footer */
         footer {
             padding: 2rem;
             text-align: center;
@@ -406,6 +356,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Modal for images */
         .modal {
             display: none;
             position: fixed;
@@ -446,6 +397,7 @@
             color: var(--primary);
         }
 
+        /* Responsive */
         @media (max-width: 968px) {
             .nav-links {
                 position: fixed;
@@ -485,10 +437,6 @@
             .gallery-grid {
                 grid-template-columns: 1fr;
             }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         html {
@@ -498,6 +446,7 @@
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="logo">Isna.dev</div>
         <ul class="nav-links" id="navLinks">
@@ -510,6 +459,7 @@
         <i class="ri-menu-line menu-btn" id="menuBtn"></i>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="gradient-blob blob-1"></div>
         <div class="gradient-blob blob-2"></div>
@@ -518,137 +468,214 @@
             <a href="index.html#portfolio" class="back-btn">
                 <i class="ri-arrow-left-line"></i> Back to Portfolio
             </a>
-            <h1>StayIn</h1>
+            <h1>CDC</h1>
             <div class="project-meta">
                 <div class="meta-item">
-                    <i class="ri-smartphone-line"></i>
-                    <span>Mobile App</span>
+                    <i class="ri-palette-line"></i>
+                    <span>Web Development</span>
                 </div>
+                <!-- <div class="meta-item">
+                    <i class="ri-window-line"></i>
+                    <span></span>
+                </div> -->
                 <div class="meta-item">
-                    <i class="ri-flutter-line"></i>
-                    <span>Flutter</span>
-                </div>
-                <div class="meta-item">
-                    <i class="ri-building-line"></i>
-                    <span>Real Estate</span>
+                    <i class="ri-graduation-cap-line"></i>
+                    <span>E-Learning Platform</span>
                 </div>
             </div>
+            <!-- <div class="achievement-badge">
+                <i class="ri-trophy-line"></i>
+                <span>Top 16 of 150 Participants - ISSFEST 2023</span>
+            </div> -->
         </div>
     </section>
 
+    <!-- Description Section -->
     <section class="description-section">
         <div class="description-card">
-            <h2>Project Background</h2>
+            <h2>Project Overview</h2>
             <p>
-                In an era of rapid development and increasing urbanization, many individuals, especially those living in
-                major cities, are seeking flexible and comfortable housing solutions. Short-term or long-term apartment
-                rentals have become a popular choice for many people, both for temporary purposes and as a more flexible
-                lifestyle alternative to home ownership.
-            </p>
+                Polines Career Center - Web-Based Job Portal System
+            
+                Polines Career Center is a web-based career portal developed to connect alumni, students, the general public, and
+                partner companies (mitra) with job opportunities in an efficient and structured way. The system also supports
+                administrators in managing job postings, partners, and premium services.
             <p>
-                StayIn was created to address the growing demand for a seamless apartment rental experience, providing a
-                comprehensive platform that connects property owners with potential tenants while ensuring transparency,
-                security, and convenience throughout the rental process.
-            </p>
         </div>
 
         <div class="description-card">
             <h2>Key Features</h2>
-
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <i class="ri-search-line"></i>
-                    <h4>Advanced Search</h4>
-                    <p>Detailed search functionality allowing tenants to customize their search criteria including
-                        location, price range, amenities, and apartment type.</p>
-                </div>
-
-                <div class="feature-item">
-                    <i class="ri-calendar-check-line"></i>
-                    <h4>Online Booking</h4>
-                    <p>Convenient direct booking through the platform with a secure reservation system, making the
-                        rental process hassle-free.</p>
-                </div>
-
-                <div class="feature-item">
-                    <i class="ri-star-line"></i>
-                    <h4>Reviews & Ratings</h4>
-                    <p>Review and rating system from previous tenants to help prospective renters make more informed
-                        decisions.</p>
-                </div>
-
-                <div class="feature-item">
-                    <i class="ri-bookmark-line"></i>
-                    <h4>Bookmark Feature</h4>
-                    <p>Save your favorite apartments for easy reference and comparison, helping you keep track of
-                        potential rental options.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="description-card">
-            <h2>User Experience Design</h2>
+       
+        <p><strong> 🔐 Authentication & User Roles</strong>
+        Multi-role authentication system: Admin, Student, Alumni, and Public Users
+        
+        Separate registration forms for students and general users
+        
+        Secure login using email and password
+        
+        Role-based access control for different dashboards and features</p>
+        
+        <p> <strong>👤 User Profile Management </strong>
+        
+        Users can manage personal profiles including education background and interests
+        
+        Profile data is used to support job recommendation features
+        
+        Alumni and students can update graduation year, major, and GPA. </p>
+        
+        <p> <strong>💼 Job Vacancy Management </strong>
+        
+        Job listings displayed in an attractive card-based layout
+        
+        Each job includes details such as company, location, salary, work type, and publication date
+        
+        Job data is categorized by major/department
+        
+        Support for CRUD (Create, Read, Update, Delete) job postings </p>
+        
+        <p> <strong>⭐ Saved Jobs (Favorites) </strong>
+        
+        Users can save or bookmark job vacancies
+        
+        Saved jobs are stored in “Saved Jobs” page for easy access
+        
+        Helps users track vacancies they are interested in </p>
+        
+    <p> <strong> 🔎 Search & Filtering System </strong>
+        
+        Search jobs by title or company name
+        
+        Filter jobs based on location, job type, and department
+        
+        Improves job discovery and user experience </p>
+        
+    <p> <strong> 🧠 Job Recommendation System </strong>
+        
+        Job recommendations based on user profile data
+        
+        Matching system considers major, interests, and graduation year
+        
+        Designed to help users find relevant job opportunities faster</p>
+        
+    <p> <strong>  🏢 Partner (Mitra) Management </strong>
+        
+        Admin can approve and manage partner companies
+        
+        Each partner has its own job postings and profile
+        
+        Job listings are associated with specific partners </p>
+        
+    <p> <strong>💳 Premium Package & Payment System</strong>
+        
+        Partners can purchase job posting packages
+        
+        Integrated with Midtrans payment gateway
+        
+        Automatic package activation after successful payment
+        
+        Purchase history and package usage tracking </p>
+        
+        <p> <strong>📢 Banner & Announcement Management</strong>
+        
+        Admin can manage promotional banners on the homepage
+        
+        Supports image upload, description, status, and display order
+        
+        Used for announcements and featured job promotions </p>
+        
+        <p> <strong>📊 Admin Dashboard</strong>
+        
+        Centralized dashboard for system monitoring
+        
+        Manage users, job vacancies, partners, banners, and packages
+        
+        View transaction and posting statistics </p>
+        
+        <p> <strong>📱 Responsive & Modern UI</strong>
+        
+        Built using Laravel Blade, TailwindCSS, and Bootstrap
+        
+        Responsive design for desktop and mobile devices
+        
+        Smooth animations and clean interface for better UX
+        
+        <p> <strong>🔐 Security & Data Management</strong>
+        
+        Form validation and protected routes
+        
+        Secure data storage with relational database
+        
+        Role-based middleware to prevent unauthorized access </p>
+           
+           
             <p>
-                StayIn prioritizes user experience with an intuitive interface that makes apartment hunting enjoyable
-                rather than overwhelming. The app features:
-            </p>
-            <ul>
-                <li>Clean and modern visual design that highlights property photos and essential information</li>
-                <li>Smooth navigation between property listings, detailed views, and booking processes</li>
-                <li>Quick filtering and sorting options to find the perfect apartment efficiently</li>
-                <li>Interactive maps showing apartment locations and nearby amenities</li>
-                <li>Responsive design optimized for various screen sizes and devices</li>
-            </ul>
-        </div>
-
-        <div class="description-card">
-            <h2>Target Audience</h2>
-            <p>
-                StayIn caters to a diverse range of users including young professionals relocating for work, students
-                seeking accommodation near universities, digital nomads looking for temporary stays, and families
-                exploring flexible living arrangements in urban areas.
+                Tech Stack:
+                Laravel, PHP, MySQL, Blade Template, Bootstrap
             </p>
         </div>
     </section>
 
+    <!-- Gallery Section -->
     <section class="gallery-section">
         <div class="section-title">
-            <h2>App Preview</h2>
+            <h2>Design Showcase</h2>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openModal('assets/stayin.png')">
-                <img src="assets/stayin.png" alt="StayIn App Screen 1">
+            <div class="gallery-item" onclick="openModal('assets/polines.png')">
+                <img src="assets/polines.png" alt=" UI Design 1">
             </div>
-            <div class="gallery-item" onclick="openModal('assets/stayin.png')">
-                <img src="assets/stayin.png" alt="StayIn App Screen 2">
+            <div class="gallery-item" onclick="openModal('assets/polines1.png')">
+                <img src="assets/polines1.png" alt="UI Design 2">
+            </div>
+            <div class="gallery-item" onclick="openModal('polines2.png')">
+                <img src="assets/polines2.png" alt="UI Design 3">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/polines3.png')">
+                <img src="assets/polines3.png" alt="UI Design 4">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/polines4.png')">
+                <img src="assets/polines4.png" alt=" UI Design 4">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/polines5.png')">
+                <img src="assets/polines5.png" alt=" UI Design 4">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/polines6.  png')">
+                <img src="assets/polines6.png" alt=" UI Design 4">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/polines7.png')">
+                <img src="assets/polines7.png" alt=" UI Design 4">
             </div>
         </div>
     </section>
-
     <section class="links-section">
         <div class="links-content">
-            <h2>View Design Prototype</h2>
-            <p>Explore the complete design on Figma</p>
+            <h2>Explore This Project</h2>
+            <p>View the source code and try the live demo</p>
             <div class="social-links">
-                <a href="https://www.figma.com/design/juA7AiROukzLUGZprN8smW/uts?node-id=0-1&t=SfhxdUt3T0mLZtqY-1"
-                    class="social-link" target="_blank">
-                    <i class="ri-figma-line"></i>
-                    View on Figma
+                <!-- <a href="https://github.com/IsnaJesika" class="social-link" target="_blank">
+                <i class="ri-github-fill"></i>
+                View on GitHub
+            </a> -->
+                <a href="https://polineskarircenter.ta2025.web.id/" class="social-link" target="_blank">
+                    <i class="ri-global-line"></i>
+                    Live Demo
                 </a>
             </div>
         </div>
     </section>
-
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Isna Jesika. All rights reserved. Crafted with passion ✨</p>
+        <p>&copy; 2024 Isna Jesika. All rights reserved.</p>
     </footer>
 
+    <!-- Image Modal -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
 
     <script>
+        // Mobile Menu Toggle
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
 
@@ -658,6 +685,7 @@
             menuBtn.classList.toggle('ri-menu-line');
         });
 
+        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -666,6 +694,7 @@
             });
         });
 
+        // Image Modal Functions
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
@@ -677,12 +706,14 @@
             document.getElementById('imageModal').style.display = 'none';
         }
 
+        // Close modal with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
+        // Scroll animations
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -692,7 +723,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.description-card, .gallery-item, .feature-item').forEach(el => {
+        document.querySelectorAll('.description-card, .gallery-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
@@ -701,4 +732,4 @@
     </script>
 </body>
 
-</html> 
+</html>

@@ -4,68 +4,658 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Proyek 5</title>
-    <link rel="stylesheet" href="style.css"> <!-- Menyambungkan file CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <!-- Menyambungkan Font Awesome -->
-    
+    <title>Monster Ball - Project Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;   
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {      
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--light);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 150px 5% 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            right: -50px;
+        }
+
+        .blob-2 {
+            width: 350px;
+            height: 350px;
+            background: var(--accent);
+            bottom: -100px;
+            left: -50px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, 30px) scale(1.1);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            color: var(--primary);
+            transform: translateX(-5px);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 50px;
+            color: var(--gray);
+        }
+
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        /* Project Description */
+        .description-section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .description-card {
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .description-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .description-card p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .description-card ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .description-card ul li {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .description-card ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .description-card strong {
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        .description-card ul ul {
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+        }
+
+        /* Image Gallery */
+        .gallery-section {
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.4s;
+            cursor: pointer;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(99, 102, 241, 0.3);
+            border-color: var(--primary);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Links Section */
+        .links-section {
+            padding: 80px 5%;
+            text-align: center;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .links-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .links-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .links-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 2px solid rgba(99, 102, 241, 0.3);
+            border-radius: 50px;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .social-link i {
+            font-size: 1.3rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Modal for images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            object-fit: contain;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 10px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 300px;
+                height: calc(100vh - 80px);
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                transition: right 0.3s;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .description-card {
+                padding: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav>
-        <div class="nav__bar">
-            <a href="#"><span class="logo nav__logo">I</span> ISNA</a>
-            <div class="nav__menu__btn" id="menu-btn">
-                <i class="ri-menu-3-line"></i>
-            </div>
-            <ul class="nav__links" id="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#service">Service</a></li>
-                <li><a href="index.html#portfolio">Portfolio</a></li>
-                <li><a href="index.html#contact" class="btn">Contact</a></li>
-            </ul>
-        </div>
+        <div class="logo">Isna.dev</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#service">Service</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="ri-menu-line menu-btn" id="menuBtn"></i>
     </nav>
 
-    <div class="container">
-        <h2>Monster Ball</h2>
-        <div class="description-container">
-            <h2>Game 2D dengan 2 Player</h2>
-            <p>Projek "Monster Ball" adalah permainan yang dirancang untuk dua pemain, di mana setiap pemain mengendalikan
-            karakternya sendiri dalam sebuah arena atau lingkungan yang mungkin penuh dengan rintangan dan tantangan. Berikut adalah
-            deskripsi umum tentang projek "Monster Ball" Anda:</p>
-            <ul>
-                <li><strong>Tata Cara Permainan:</strong>
-                    <ul>
-                        <li>Kedua Player harus berlomba-lomba memasukan bola ke batas lawan hingga score mencapai 5, player tersebut dinyatakan menang.</li>
-                        <li> Player dapat menggerakan Hero mereka baik ke atas - bawah, kanan-atas, untuk memukul bola.
-                        </li>
-                    </ul>
-                </li>
-                
-            </ul>
-        </div>
-        <div class="image-container">
-            <img id="img1" src="assets/game.png" alt="portfolio" />
-            <img id="img2" src="assets/play.png" alt="portfolio" />
-            <img id="img3" src="assets/biru.png" alt="portfolio" />
-            <img id="img4" src="assets/merah.png" alt="portfolio" />
-            <img id="img5" src="assets/credit.png" alt="portfolio" />
-            <img id="img6" src="assets/exit.png" alt="portfolio" />
-        </div>
-    </div>
-    <!-- Contact Section -->
-    <section class="section__container contact__container" id="contact">
-        <h2 class="section__header">Visit the following link for project details!</h2>
-        <div class="contact__socials">
-            <a href="https://github.com/IsnaJesika"><i class="ri-github-fill"></i></a>
-                <i class="fas fa-globe"></i> <!-- Menggunakan ikon Web dari Font Awesome -->
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="gradient-blob blob-1"></div>
+        <div class="gradient-blob blob-2"></div>
+
+        <div class="hero-content">
+            <a href="index.html#portfolio" class="back-btn">
+                <i class="ri-arrow-left-line"></i> Back to Portfolio
             </a>
+            <h1>Monster Ball</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="ri-gamepad-line"></i>
+                    <span>2D Game</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-team-line"></i>
+                    <span>Multiplayer</span>
+                </div>
+                <div class="meta-item">
+                    <i class="ri-code-s-slash-line"></i>
+                    <span>Unity Engine</span>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Description Section -->
+    <section class="description-section">
+        <div class="description-card">
+            <h2>Game Overview</h2>
+            <p>
+                Monster Ball is an exciting two-player game designed for competitive gameplay.
+                Each player controls their own character in an arena filled with challenges and obstacles.
+                The game combines strategy, timing, and quick reflexes to create an engaging multiplayer experience.
+            </p>
+        </div>
+
+        <div class="description-card">
+            <h2>Gameplay Mechanics</h2>
+            <ul>
+                <li>
+                    <strong>Objective:</strong>
+                    <ul>
+                        <li>Players compete to score points by hitting the ball past their opponent's boundary</li>
+                        <li>First player to reach 5 points wins the match</li>
+                        <li>Fast-paced action requires quick decision-making and precise control</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Controls:</strong>
+                    <ul>
+                        <li>Move your hero up and down to position yourself</li>
+                        <li>Jump diagonally to reach higher positions</li>
+                        <li>Time your movements to hit the ball effectively</li>
+                        <li>Use strategic positioning to outmaneuver your opponent</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Features:</strong>
+                    <ul>
+                        <li>Smooth character animations and physics</li>
+                        <li>Real-time competitive gameplay</li>
+                        <li>Score tracking system</li>
+                        <li>Multiple character options</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="section-title">
+            <h2>Game Screenshots</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openModal('assets/game.png')">
+                <img src="assets/game.png" alt="Monster Ball Main Menu">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/play.png')">
+                <img src="assets/play.png" alt="Gameplay">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/biru.png')">
+                <img src="assets/biru.png" alt="Blue Character">
+            </div>
+            <div class="gallery-item" onclick="openModal('assets/merah.png')">
+                <img src="assets/merah.png" alt="Red Character">
+            </div>
+            <!-- <div class="gallery-item" onclick="openModal('assets/credit.png')">
+                <img src="assets/credit.png" alt="Credits">
+            </div> -->
+            <div class="gallery-item" onclick="openModal('assets/exit.png')">
+                <img src="assets/exit.png" alt="Exit Screen">
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links-section">
+        <div class="links-content">
+            <h2>Explore This Project</h2>
+            <p>Check out the source code and play the game yourself!</p>
+            <div class="social-links">
+                <a href="https://github.com/IsnaJesika" class="social-link" target="_blank">
+                    <i class="ri-github-fill"></i>
+                    View on GitHub
+                </a>
+                <a href="#" class="social-link">
+                    <i class="ri-global-line"></i>
+                    Play Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jesika. All rights reserved. </p>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('ri-close-line');
+            menuBtn.classList.toggle('ri-menu-line');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.classList.add('ri-menu-line');
+                menuBtn.classList.remove('ri-close-line');
+            });
+        });
+
+        // Image Modal Functions
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.description-card, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
